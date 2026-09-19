@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Order of Finite Beings: AI and the Foundations of Human Civilization</title>
+<meta name="description" content="A paper by Wenjun Cao arguing that AI surpassing human capability&#8212;independent of autonomous will or loss of control&#8212;erodes the shared presupposition of human finitude underlying democracy, science, economics, and morality.">
+<meta name="author" content="Wenjun Cao">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Order of Finite Beings: AI and the Foundations of Human Civilization">
+<meta property="og:description" content="No omniscient or omnipotent agent exists in the empirical world &#8212; every human institution presupposes this. AI is making it false for the first time.">
+<meta property="og:url" content="https://directedlink.github.io/the-order-of-finite-beings/">
+<meta property="og:site_name" content="The Order of Finite Beings">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Order of Finite Beings: AI and the Foundations of Human Civilization">
+<meta name="twitter:description" content="A paper on why AI surpassing human capability erodes the foundations of democracy, science, economics, and morality &#8212; with or without autonomous will.">
+
+<!-- Google Scholar (Highwire Press) tags -->
+<meta name="citation_title" content="The Order of Finite Beings: AI and the Foundations of Human Civilization">
+<meta name="citation_author" content="Cao, Wenjun">
+<meta name="citation_publication_date" content="2026/09/17">
+<meta name="citation_online_date" content="2026/09/17">
+<meta name="citation_pdf_url" content="https://directedlink.github.io/the-order-of-finite-beings/paper.pdf">
+<meta name="citation_abstract_html_url" content="https://directedlink.github.io/the-order-of-finite-beings/">
+<meta name="citation_doi" content="10.5281/zenodo.22841441">
+<meta name="citation_language" content="en">
+<meta name="citation_keywords" content="artificial intelligence; political philosophy; philosophy of science; democracy; institutions; AGI; superintelligence">
+
+<link rel="canonical" href="https://directedlink.github.io/the-order-of-finite-beings/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EDE6D8'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%2324211C' stroke-width='2'/%3E%3Cline x1='6' y1='20' x2='26' y2='20' stroke='%237C5C22' stroke-width='2'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #EDE6D8;
+    --paper-raised: #F4EFE4;
+    --ink: #24211C;
+    --ink-soft: #5B564C;
+    --rule: #C7BCA2;
+    --accent: #7C5C22;
+    --accent-deep: #6E2A2A;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --measure: 42rem;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ background: var(--paper); }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover{ color: var(--accent-deep); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent-deep);
+    outline-offset: 3px;
+  }
+
+  .skip-link{
+    position: absolute; left: -999px; top: auto;
+    background: var(--ink); color: var(--paper); padding: .6em 1em;
+    font-family: var(--sans); font-size: .9rem; z-index: 10;
+  }
+  .skip-link:focus{ left: 1rem; top: 1rem; }
+
+  .wrap{
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 1.4rem;
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    padding: 4.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker{
+    font-family: var(--sans);
+    font-size: .8rem;
+    letter-spacing: .02em;
+    color: var(--accent);
+    margin: 0 0 1.1rem;
+  }
+  h1.title{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 5vw, 2.7rem);
+    line-height: 1.18;
+    margin: 0 0 .6rem;
+    max-width: 22ch;
+  }
+  p.subtitle{
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+    margin: 0 0 1.8rem;
+    max-width: 30ch;
+  }
+  .byline{
+    font-family: var(--sans);
+    font-size: .95rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem 1.1rem;
+  }
+  .byline strong{ color: var(--ink); font-weight: 600; }
+
+  .actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 2rem;
+  }
+  .btn{
+    font-family: var(--sans);
+    font-size: .92rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: .65em 1.1em;
+    border-radius: 3px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: .5em;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .btn:hover{ background: var(--ink); color: var(--paper); }
+  .btn.primary{ background: var(--ink); color: var(--paper); }
+  .btn.primary:hover{ background: var(--accent-deep); border-color: var(--accent-deep); color: var(--paper); }
+
+  /* ---------- Epigraph (hero line) ---------- */
+  .epigraph{
+    padding: 3rem 0 2.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .epigraph p{
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.3rem, 3.4vw, 1.7rem);
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+    max-width: 26ch;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .epigraph p{ animation: rise .7s ease-out both; }
+  }
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(6px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Abstract ---------- */
+  .abstract{
+    margin: 2.6rem 0 3rem;
+    padding: 1.6rem 1.7rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+  }
+  .abstract h2{
+    font-family: var(--sans);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 0 0 .8rem;
+  }
+  .abstract p{ margin: 0; color: var(--ink); }
+
+  /* ---------- Contents ---------- */
+  nav.toc{
+    margin: 2.6rem 0 3.4rem;
+    font-family: var(--sans);
+    font-size: .95rem;
+  }
+  nav.toc h2{
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--ink-soft);
+    margin: 0 0 .9rem;
+  }
+  nav.toc ol{
+    list-style: none;
+    margin: 0; padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  nav.toc li{ break-inside: avoid; margin-bottom: .55rem; }
+  nav.toc a{ color: var(--ink); text-decoration: none; }
+  nav.toc a:hover{ color: var(--accent-deep); text-decoration: underline; }
+  nav.toc .num{ color: var(--accent); font-variant-numeric: tabular-nums; margin-right: .5em; }
+  @media (max-width: 560px){ nav.toc ol{ columns: 1; } }
+
+  /* ---------- Article body ---------- */
+  main{ padding-bottom: 1rem; }
+
+  section.sec{
+    padding: 2.6rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.sec:last-of-type{ border-bottom: none; }
+
+  .sec-head{
+    display: flex;
+    align-items: baseline;
+    gap: .9rem;
+    margin-bottom: 1.3rem;
+  }
+  .sec-num{
+    font-family: var(--sans);
+    font-size: .95rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  h2.sec-title{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    margin: 0;
+  }
+
+  section.sec p{ margin: 0 0 1.2rem; }
+  section.sec p:last-child{ margin-bottom: 0; }
+
+  blockquote.pull{
+    margin: 1.8rem 0;
+    padding-left: 1.3rem;
+    border-left: 3px solid var(--accent);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.6vw, 1.28rem);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .key-insight{
+    margin: 1.8rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent-deep);
+  }
+  .key-insight p{ margin: 0; }
+
+  .triad{
+    display: grid;
+    gap: 1.6rem;
+    margin: 1.6rem 0;
+  }
+  .triad-item{
+    padding-left: 1.3rem;
+    border-left: 2px solid var(--rule);
+  }
+  .triad-label{
+    display: block;
+    font-family: var(--sans);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: var(--accent);
+    margin-bottom: .5rem;
+  }
+  .triad-item p{ margin: 0 0 .8rem; }
+  .triad-item p:last-child{ margin-bottom: 0; }
+
+  .conditions{
+    margin: 1.6rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .conditions li{
+    margin-bottom: 1rem;
+    padding-left: 2.2rem;
+    position: relative;
+  }
+  .conditions li::before{
+    content: counter(cond);
+    counter-increment: cond;
+    position: absolute;
+    left: 0;
+    top: .1rem;
+    font-family: var(--sans);
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .conditions{ counter-reset: cond; }
+
+  /* ---------- References ---------- */
+  section.refs h2.sec-title{ margin-bottom: 1.5rem; }
+  .refs ol{
+    list-style: none;
+    margin: 0; padding: 0;
+    font-size: .96rem;
+    color: var(--ink-soft);
+  }
+  .refs li{
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--rule);
+    text-indent: -1.4rem;
+    padding-left: 1.4rem;
+  }
+  .refs li:last-child{ border-bottom: none; }
+  .refs li:target{ background: var(--paper-raised); color: var(--ink); }
+
+  /* ---------- Cite box ---------- */
+  .cite-box{
+    margin: 1.4rem 0 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+  }
+  .cite-box p{
+    font-family: var(--sans);
+    font-size: .85rem;
+    color: var(--ink-soft);
+    margin: 0 0 .8rem;
+  }
+  .cite-header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .8rem;
+  }
+  .cite-header p{ margin: 0; }
+  .copy-btn{
+    font-family: var(--sans);
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: .35em .8em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .copy-btn:hover{ border-color: var(--accent); color: var(--accent-deep); }
+  .cite-box pre{
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: .82rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+  .cite-box .apa{
+    font-family: var(--serif);
+    font-size: .95rem;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 3rem 0 4rem;
+    font-family: var(--sans);
+    font-size: .88rem;
+    color: var(--ink-soft);
+  }
+  footer a{ color: var(--ink-soft); }
+  footer .top{
+    margin-bottom: 1.2rem;
+  }
+
+  ::selection{ background: var(--rule); color: var(--ink); }
+
+  @media print{
+    nav.toc, .actions, footer .top{ display: none; }
+    body{ background: #fff; }
+    .abstract, .key-insight, .cite-box{ background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to paper</a>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker">Working paper &middot; September 2026</p>
+    <h1 class="title">The Order of Finite Beings</h1>
+    <p class="subtitle">AI and the Foundations of Human Civilization</p>
+    <div class="byline">
+      <span><strong>Wenjun Cao</strong></span>
+      <span><a href="mailto:wenjun.cao.research@gmail.com">wenjun.cao.research@gmail.com</a></span>
+      <span>September 17, 2026</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="paper.pdf">Download PDF</a>
+      <a class="btn" href="#cite">Cite this paper</a>
+      <a class="btn" href="#references">References</a>
+    </div>
+  </header>
+
+  <div class="epigraph">
+    <p>&#8220;If the world they fear is coming, the world I describe arrives first.&#8221;</p>
+  </div>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>All institutions of human civilization rest on a presupposition that has never been explicitly examined: no omniscient or omnipotent agent exists in the empirical world. This paper argues that AI is rendering this presupposition false for the first time. This does not require AI to possess autonomous will or to go rogue. The mere fact of surpassing human capability suffices for the operational conditions of political checks and balances, scientific method, economic systems, and moral norms to begin failing. The paper demonstrates the existence and erosion of this shared presupposition across political philosophy, philosophy of science, and economics, introduces the concept of a third&#8209;category entity to characterize AI&#8217;s unplaceable position in the human conceptual framework, and argues that no non&#8209;dictatorial landing point exists within current institutional logic. The contribution lies in diagnosing the nature of the problem: this is a foundational problem, and recognizing it as such matters more than working at the surface level.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><span class="num">01</span><a href="#introduction">Introduction</a></li>
+      <li><span class="num">02</span><a href="#political">The Political Presupposition</a></li>
+      <li><span class="num">03</span><a href="#scientific">The Scientific Presupposition</a></li>
+      <li><span class="num">04</span><a href="#economic">The Economic Presupposition</a></li>
+      <li><span class="num">05</span><a href="#moral">The Moral Presupposition</a></li>
+      <li><span class="num">06</span><a href="#third-category">The Third&#8209;Category Entity</a></li>
+      <li><span class="num">07</span><a href="#hollowed-out">Institutions Hollowed Out</a></li>
+      <li><span class="num">08</span><a href="#no-landing">No Landing Point</a></li>
+      <li><span class="num">09</span><a href="#conclusion">Conclusion</a></li>
+      <li><span class="num">10</span><a href="#references">References</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <section class="sec" id="introduction">
+      <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">Introduction</h2></div>
+
+      <p>Recently, AI has achieved startling advances in domains of original intellectual creativity that humans have long considered their own. Take mathematics. In 2025, AI reached gold&#8209;medal level at the International Mathematical Olympiad. By September 2026, although not without controversy and still involving human&#8211;AI collaboration, mathematicians working with AI systems had produced proofs of finite&#8209;time blowup for the Navier&#8211;Stokes and related equations, a Millennium Prize problem (<a href="#ref-buckmaster-alpoge-2026">Buckmaster and Alp&ouml;ge 2026</a>; <a href="#ref-openai-2026">OpenAI 2026</a>). At this rate of progress, the future development of AI may exceed anything we currently imagine. What we routinely discuss as AGI (Artificial General Intelligence) or even superhuman intelligence (ASI) is no longer a pure concept. What happens once we get there? What happens along the way?</p>
+
+      <p>Most existing concerns cluster around two scenarios. AI goes rogue, develops autonomous will, and ultimately controls or eliminates humanity (<a href="#ref-bostrom-2014">Bostrom 2014</a>; <a href="#ref-russell-2019">Russell 2019</a>; <a href="#ref-yudkowsky-soares-2025">Yudkowsky and Soares 2025</a>). Alternatively, someone uses AI to manufacture bioweapons or similar instruments, plunging civilization into chaos (<a href="#ref-hendrycks-2023">Hendrycks et al. 2023</a>). These concerns are legitimate. But there is a logical relationship worth noting: for any of these scenarios to unfold, a common prerequisite must be met first. AI must become powerful enough to surpass human beings. What I argue here is precisely this: that step alone, without autonomous will, without loss of control, without any malice, already begins to erode the institutional foundations of human civilization. If the world they fear is coming, the world I describe arrives first.</p>
+
+      <div class="key-insight">
+        <p><strong>Our key insight:</strong> Behind all human societies, whether political, scientific, moral, or economic, lies a shared and hidden presupposition: human finitude. To put it more precisely, no omniscient or omnipotent agent exists in this world. The logic is straightforward. All institutions, political and economic alike, exist through strategic interaction, and strategic interaction requires roughly comparable participants. Where extreme asymmetry exists, all such interaction collapses on the spot. Human civilization has functioned well because human nature itself is finite. Once AI of superhuman capability enters the picture, this condition is broken at its foundations.</p>
+      </div>
+
+      <p>AI does not need to be an autonomous agent. AI itself does not participate in strategic interaction. But the person who wields AI does. A human empowered by superhuman AI becomes an agent acting in the secular world with near&#8209;omniscient, near&#8209;omnipotent capability, while everyone else remains finite. The threat comes from the complete destruction of parity among human agents.</p>
+
+      <p>This means the way we frame problems and design responses may require a fundamental shift. The problem may already lie outside existing institutional frameworks. We need to step back and ask whether the presuppositions of those frameworks still hold. For instance, we presuppose that democratic oversight can steer AI toward human benefit. The more fundamental question is whether democracy can structurally continue to exist in the presence of AI.</p>
+
+      <p>This is a more fundamental, more severe, and more ancient problem than we tend to imagine.</p>
+    </section>
+
+    <section class="sec" id="political">
+      <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">The Political Presupposition</h2></div>
+
+      <p>To return to the source of the problem, we begin with politics.</p>
+
+      <p>Since ancient Greece, forms of government have been classified into democracy, oligarchy, tyranny, or more finely into republic, aristocracy, monarchy, and so on. But apart from tyranny and absolute monarchy, every system involves a problem of balance: the parties may differ in capability, but the gap never reaches the level of a categorical rupture. Where such a rupture exists, strategic interaction ceases altogether. One side simply absorbs the other, and political life is cancelled on the spot. Precisely because the gaps are finite, interaction exists.</p>
+
+      <p>The Athenian assembly analyzed by Aristotle (<a href="#ref-aristotle-350bce">Aristotle c. 350 BCE</a>) is the earliest embodiment of this structure. Orators took the stage to speak because they needed the consent of those below. The people in the audience may not all have been capable of giving speeches, and their abilities varied, but the collective judgment carried value, because each person could contribute the part they had seen, and together they could judge more accurately than a few elites alone.</p>
+
+      <p>In the classical texts of modern democracy, Madison wrote in Federalist No. 51: &#8220;If men were angels, no government would be necessary&#8221; (<a href="#ref-madison-1788">Madison 1788</a>). Between the people and the government, between the branches of power, there persists a condition of mutual checking and mutual oversight. This is the fundamental idea of modern democracy. Because everyone is finite, because no one is the best, everyone must be placed under oversight to prevent catastrophic outcomes (<a href="#ref-niebuhr-1944">Niebuhr 1944</a>).</p>
+
+      <p>Montesquieu, in <em>The Spirit of the Laws</em> (<a href="#ref-montesquieu-1748">Montesquieu 1748</a>), went further. Under democracy, the masses and the governing elite are distinct. The elite genuinely govern. The people, though they cannot govern themselves, can at least judge who is fit to govern and whether things are being done well. This is democracy in its most minimal version, and even this minimum presupposes that the people possess a basic capacity for judgment.</p>
+
+      <p>Popper, in <em>The Open Society and Its Enemies</em> (<a href="#ref-popper-1945">Popper 1945</a>), pushed the justification of democracy to its limit. His central adversary was Plato&#8217;s philosopher&#8209;king (<a href="#ref-plato-375bce">Plato c. 375 BCE</a>): the philosopher&#8209;king claims intellectual superiority, the ability to perceive the nature of things and the laws governing society. Since there is one correct answer, society should move toward that standard. The noise of democracy is merely interference. Popper&#8217;s rebuttal began from Mill&#8217;s argument about the limits of knowledge (<a href="#ref-mill-1859">Mill 1859</a>): no one possesses ultimate truth, so no uniquely correct path exists. On this basis, Popper reframed the question itself: the central problem of politics is how to peacefully correct and replace the ruler when he errs. The value of an open society lies in its capacity for self&#8209;correction, not in its ability to select the best leader.</p>
+
+      <p>But step back one further level. Why prevent dictatorship? Because a genuine philosopher&#8209;king does not exist. It is an imaginary position that no one has ever truly deserved. Some aspire to occupy it, but their actual capabilities fall short. In the past, this was a self&#8209;evident premise: everyone is human, everyone is finite. Someone merely overreaches his station, and we must stop him.</p>
+
+      <p>With AI, this premise is shaken for the first time. What if an entity genuinely approaches omniscience? If a philosopher&#8209;king were to appear, one who earned the title through actual capability rather than self&#8209;appointment, could our entire democratic system still hold?</p>
+    </section>
+
+    <section class="sec" id="scientific">
+      <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">The Scientific Presupposition</h2></div>
+
+      <p>That science rests on a presupposition may seem counterintuitive, since we typically think of it as an objective domain that speaks for itself. But what we must do here is examine its presuppositions.</p>
+
+      <p>Peter Harrison, in <em>The Fall of Man and the Foundations of Science</em> (<a href="#ref-harrison-2007">Harrison 2007</a>), reveals a forgotten history: the birth of modern empirical science was directly connected to the Christian doctrine of the Fall. After Adam and Eve were expelled from Eden, humanity became an imperfect being, mortal, cognitively limited. As finite individuals, humans could not arrive at the ultimate truths of the universe by sheer force of thought. They had to rely on external verification to continually adjust their hypotheses. This is the root of empiricism: because we are finite, we need experience to correct us.</p>
+
+      <p>The philosophy of science confirms this pattern. We continually form hypotheses, test them against evidence, and revise them. Scientific paradigms always stand in a state of potential replacement, because we must see which hypothesis explains best (<a href="#ref-kuhn-1962">Kuhn 1962</a>; <a href="#ref-lakatos-1978">Lakatos 1978</a>; <a href="#ref-popper-1934">Popper 1934</a>). The foundation of all this is an empiricist epistemology. We may not be consciously aware of it, but the entire scientific enterprise implicitly rests on the premise that humans are finite knowers.</p>
+
+      <p>The Navier&#8211;Stokes event shook this foundation. When AI can produce answers directly, like an oracle uttering pronouncements, bypassing the roundabout path of empiricism altogether, the very reason for empiricism is suspended. You do not know how the answer was generated internally. You do not know the actual line of reasoning. You see only a correct result.</p>
+
+      <p>Two consequences follow. First, knowledge itself loses value in the face of infinite production. Solving an IMO problem counted as an achievement last year. This year only a Millennium Prize problem merits attention. Next year perhaps only solving P vs. NP will matter. Scientific priority becomes nominal, because you can no longer tell whether a result was produced by a human, by a human collaborating with AI, or by AI alone. Second, the verifier can no longer verify the producer&#8217;s output: in the Navier&#8211;Stokes event, even the world&#8217;s foremost mathematicians required months to verify AI&#8217;s result. This is a cognitive state without precedent: correct results are produced, but humans cannot understand why they are correct.</p>
+
+      <p>The institution has not been overthrown. The problem the institution was designed to solve is disappearing. Empirical science is the roundabout path by which finite knowers approach truth. If an entity can reach the destination directly, the roundabout path becomes an empty shell.</p>
+    </section>
+
+    <section class="sec" id="economic">
+      <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">The Economic Presupposition</h2></div>
+
+      <p>The economic systems of human society, regardless of school, all share a single presupposition: human finitude.</p>
+
+      <p>From the Marxist perspective (<a href="#ref-marx-1867">Marx 1867</a>): human labor is finite, the value it produces is finite, and it is precisely because these things are finite that they enter the market and generate exchange and surplus value (the gap between what labor produces and what labor is paid). From the perspective of modern economics after the marginal revolution, which grounded value in demand rather than labor (<a href="#ref-menger-1871">Menger 1871</a>): value depends on how much one additional unit of a good matters to its buyer, and this measure, marginal utility, presupposes finite supply and finite demand. If supply becomes infinite, the marginal value of everything approaches zero.</p>
+
+      <p>At the market level, this devaluation is already happening. When AI can replicate the surface output of human producers at zero cost, and markets evaluate results rather than processes, deep human producers are driven out (<a href="#ref-cao-2026">Cao 2026</a>). The mechanism does not require AGI or ASI. At the current level of AI capability, the moment it slightly exceeds human performance, the effect begins.</p>
+
+      <p>The deeper connection, however, lies at the intersection of economics and political institutions. Hayek&#8217;s theory of dispersed knowledge (<a href="#ref-hayek-1945">Hayek 1945</a>) holds that each person possesses knowledge that is local and particular. No one holds all of it. Build a hierarchical management system that funnels all information to a single decision&#8209;maker, and information loss leads to inefficiency. Markets and democracy, as distributed information&#8209;processing mechanisms, therefore outperform centralized authority. This amounts to a defense of democracy grounded in how knowledge works.</p>
+
+      <p>But what is the premise of this argument? That no one can possess all the information. And why not? Because of human finitude. AI is now challenging this directly. It is, at its core, a massive information&#8209;processing engine, capable of marshaling and processing information far beyond any individual. While it theoretically cannot possess one hundred percent of all information, it can approximate closely enough to make decisions more rational than any dictator or president could hope to achieve. The premise of dispersed&#8209;knowledge theory, too, is that no omniscient agent exists.</p>
+
+      <p>The foundations of economics, from Marx through the marginal revolution to Hayek, face the wholesale removal of their presuppositions.</p>
+    </section>
+
+    <section class="sec" id="moral">
+      <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">The Moral Presupposition</h2></div>
+
+      <p>The operation of morality depends on something quite plain: reciprocity. Human beings are roughly equal in capability. Even the strongest individual cannot guarantee that others will not band together and overcome him (<a href="#ref-hobbes-1651">Hobbes 1651</a>). Because no one can absolutely overpower everyone else, all face the possibility of being harmed, and pure predation is too dangerous for anyone. Cooperation becomes the rational choice, and cooperation requires norms of mutual restraint to sustain it. Goodness, in this account, is temperance: I have the power to harm you, but I choose not to. This choice carries moral weight because the other person is vulnerable, susceptible to influence. He is like me, finite, capable of finding himself helpless and alone. I can feel what he feels, and so restraint has meaning. This structure is bound to no particular culture or religion. It is the basic condition of coexistence among finite beings (<a href="#ref-kant-1785">Kant 1785</a>).</p>
+
+      <p>What happens after secularization, the modern retreat of religious authority from public life? God has exited the stage. What keeps morality alive? The answer: the fact of finitude itself. Secularization changed beliefs. People stopped believing in God. But secularization did not change the facts. All agents in the world remained finite, vulnerable, mutually dependent. Na&#239;ve empathy, social contract, secular human rights: none of these require theological faith to operate. They do require the objective condition that all persons are finite to remain true. This is why secularization did not destroy morality.</p>
+
+      <p>AI changes the facts themselves. When an agent, or an empowered person, becomes invulnerable, unconstrainable, and fundamentally beyond comparison with others, the structure of reciprocity fractures. Restraint loses its object, because your restraint means nothing to an unbounded agent. Obligation loses its ground, because obligation presupposes that both parties stand in a relationship of mutual influence.</p>
+
+      <p>Reciprocity is only one layer. In the secular framework, on what does human dignity rest? On rational capacity. Humanity is the only known rational agent in the universe. This is the entire wager of secular humanism, the view that human dignity can stand without religious foundations. Once rational capacity is no longer uniquely human, that wager is lost, and there is no replacement. In the religious framework, dignity derives from the relationship with God. Humans are made in God&#8217;s image. The secular framework substituted rational capacity itself as the ground of dignity, and this is precisely what AI is surpassing.</p>
+
+      <blockquote class="pull">God&#8217;s infinity plus human finitude equals human meaning. AI&#8217;s infinity plus human finitude equals human meaninglessness. No relationship, only replacement.</blockquote>
+
+      <p>That God&#8217;s infinity never destroyed human meaning while AI&#8217;s infinity does destroy it is no accident. God is transcendent (<a href="#ref-aquinas-1265">Aquinas 1265&#8211;1274</a>): not on the same causal plane, not in competition with humans, not replacing them, conferring meaning on finitude through relationship. AI is immanent: in the same world, doing the same things, doing them better, and not dying. It turns finitude into pure disadvantage.</p>
+    </section>
+
+    <section class="sec" id="third-category">
+      <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">The Third&#8209;Category Entity</h2></div>
+
+      <p>The human conceptual framework contains only two positions: the infinite God and finite humanity.</p>
+
+      <p>God, in this framework, is transcendent: outside the empirical world, absent from secular strategic interaction. In the language of game theory, God is the Nature in the game, not a player. Between humanity and God there exists a covenant, a binding relationship between the finite and the infinite. Through this link, human beings receive calling and guidance, and approach the good under finite conditions. In the secular world, all participants in strategic interaction are, without exception, finite.</p>
+
+      <p>Throughout history, some have attempted to occupy a position approaching God&#8217;s: pharaohs, popes, kings, leaders. All of them revealed their finitude. Those who relied on hereditary succession needed bloodlines and institutions to perpetuate their authority, which itself was an admission that the individual could not sustain it alone. Those who relied on sacred office held authority in the position rather than in the person. Replace the occupant and the system continued to function, proving that the person in the seat was no superhuman. The closest approximation to a genuine superhuman was what Weber (<a href="#ref-weber-1922">Weber 1922</a>) called charisma: authority built purely on extraordinary personal qualities. Yet even charismatic authority could not endure, because the leader dies. To persist, it must be institutionalized, transforming into hereditary or bureaucratic systems that outlast the individual (Weber calls this process routinization). Whatever image these superhuman authorities were crafted into, in objective reality they remained finite players, prone to error, subject to aging and death.</p>
+
+      <p>AI differs from every historical superhuman authority in three crucial respects. Its capability is real, conferred neither by perception nor by faith. It does not die, and faces no succession problem. It is not human, and cannot be absorbed into institutions designed for humans.</p>
+
+      <p>The structural fragility long predated AI. Institutions were built on the presupposition of finitude, and this fragility was always there. Strauss diagnosed long ago that modernity cannot provide foundations for its own values (<a href="#ref-strauss-1953">Strauss 1953</a>). AI is the catalyst, turning a philosophical problem into an empirical one. The printing press played the same role for the Reformation: the theological crisis and corruption within the Church had long existed, and the press merely made suppression impossible (<a href="#ref-pettegree-2015">Pettegree 2015</a>).</p>
+
+      <p>Before discussing the specific impact of AI, we set aside the industry terms AGI and ASI. They lack consensus definitions and will age poorly. What we attend to instead is a functional condition: when agents (or empowered agents) satisfying the following three conditions appear in a society, the consequences argued in this paper obtain.</p>
+
+      <ol class="conditions">
+        <li><strong>Capability is incomprehensible:</strong> correct results are produced, but others cannot understand why they are correct.</li>
+        <li><strong>Capability is unsupervisable:</strong> others cannot determine whether the agent is operating correctly or deceiving.</li>
+        <li><strong>Capability is asymmetric beyond remedy:</strong> the gap cannot be closed through human effort alone.</li>
+      </ol>
+    </section>
+
+    <section class="sec" id="hollowed-out">
+      <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Institutions Hollowed Out</h2></div>
+
+      <p>Once these conditions are met, the operational conditions of institutions begin to fail one by one.</p>
+
+      <p>Return to politics. Madison&#8217;s motivational argument, that power will be abused and therefore requires constraint (<a href="#ref-madison-1788">Madison 1788</a>), still holds. Even in the presence of an omniscient agent, there is reason to worry about abuse. But his solution, the separation and balancing of powers, presupposed that all participants are finite, comparable, and comprehensible in their capabilities. Once AI enters, this presupposition ceases to hold. The overseer cannot understand what the overseen is doing, because AI&#8209;assisted decisions are themselves incomprehensible. The capability gap shifts from a difference of degree to a categorical rupture. Problems may go undetected, because the detection tools themselves depend on AI, and no independent human channel of verification remains. The logic of checks and balances is sound, but its operating conditions are vanishing.</p>
+
+      <p>More critically, Montesquieu&#8217;s minimum condition has also been breached (<a href="#ref-montesquieu-1748">Montesquieu 1748</a>). He already allowed for substantial cognitive asymmetry within democracy: the people need not govern, only discern who is fit to govern. This was democracy&#8217;s last defensible line. But once AI participates in the governing process and governance itself becomes incomprehensible, even this minimum cannot hold. What the people lose is the basic ability to judge the quality of their governors. The most minimal version of democracy also fails (<a href="#ref-anderson-2006">Anderson 2006</a>; <a href="#ref-estlund-1997">Estlund 1997</a>; <a href="#ref-landemore-2013">Landemore 2013</a>).</p>
+
+      <p>At the market level, human producers are being systematically displaced. Once AI output matches or surpasses human quality, the signal systems of market verification, priority, intellectual property, returns to human capital, all lose their anchoring (<a href="#ref-cao-2026">Cao 2026</a>). This process has already begun at the current level of AI capability, without waiting for AGI.</p>
+
+      <p>The scientific method faces the same structural void. Knowledge production is shifting from scarcity to infinity. Solving an IMO problem counted as an achievement last year. This year only a Millennium Prize problem warrants attention. Next year perhaps only P vs. NP will matter. When output becomes infinite, the content that priority represents depreciates. And priority faces a more fundamental predicament still: you can no longer tell whether a result was produced by a human, by a human collaborating with AI, or by AI alone. When attribution becomes undecidable, the credit system loses its footing. The entire operation of science as a social institution, who receives recognition, who receives funding, whose reputation carries weight, depends on two things: that knowledge is scarce and that contributions are attributable. Both are disappearing simultaneously. Together with the verification predicament discussed earlier, the problem that the institution was designed to solve is being hollowed out from multiple directions at once. The institution becomes a shell.</p>
+    </section>
+
+    <section class="sec" id="no-landing">
+      <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">No Landing Point</h2></div>
+
+      <p>After a shock this foundational, is there a way out?</p>
+
+      <p>Consider the last crisis of comparable scale. After the Reformation, all of Europe descended into upheaval, rival theological systems tore at each other, and the eventual result was the Westphalian system of 1648, a compromise born of exhaustion that granted each state sovereignty over its own territory and religion. Under that system the Enlightenment emerged, and reason replaced the chaos of rule by religious authority. The whole process took two centuries.</p>
+
+      <p>Landing was possible because reason is a capacity internal to human beings themselves: cooperative in nature, permitting argument, persuasion, compromise, and institutional design, and equally possessed by all. One could stand outside religion and use reason to design a new order. The landing point lay outside the domain that had been disrupted.</p>
+
+      <p>Why can this not work again? Three levels.</p>
+
+      <div class="triad">
+        <div class="triad-item">
+          <span class="triad-label">First</span>
+          <p>AI capability is not reason. Reason is cooperative, with an internal directionality. AI capability is pure amplification of power, without internal direction. It simply makes its holder stronger. Imagine every person in Middle&#8209;earth possessing a Ring of Power (<a href="#ref-tolkien-1954">Tolkien 1954&#8211;1955</a>). Could any republic emerge from that? Distributing reason to everyone may build a republic. Distributing a Ring of Power to everyone will build nothing. Universal AI access is not analogous to universal possession of reason as a landing point.</p>
+        </div>
+        <div class="triad-item">
+          <span class="triad-label">Second</span>
+          <p>Game&#8209;theoretic equilibrium requires that actors be comparable. Throughout history, every power structure, however unequal, kept its disparities within a quantitative range. The strong needed the weak for their numbers, their labor, or their obedience. The weak, banding together, could pose a credible threat. Elites shared power because the cost of refusing to share was too high (<a href="#ref-acemoglu-robinson-2006">Acemoglu and Robinson 2006</a>). This interaction existed because the capabilities of both sides, though unequal, remained comparable and calculable. The capability gap AI creates operates on a different scale entirely. It is a qualitative rupture: one side acquires capabilities that the other cannot in principle reach, or even comprehend. Once the gap shifts from calculable to beyond comparison, the premise of game&#8209;theoretic equilibrium vanishes. A stable tiered&#8209;access system may look like balance, but it is in fact a concession from those above to those below, because if lower&#8209;tier AI access truly threatened the upper tier, the upper tier would not permit it to exist.</p>
+          <p>There is also a fundamental asymmetry between offense and defense. Launch a hundred missiles at a single target, and you win if even one hits. Intercept those hundred missiles, and you lose unless you stop every last one. AI&#8209;empowered attack operates the same way: the attacker need find only one vulnerability. The defender must close them all. Once everyone is endowed with near&#8209;unlimited offensive capability, defense becomes structurally impossible.</p>
+        </div>
+        <div class="triad-item">
+          <span class="triad-label">Third</span>
+          <p>What is being disrupted is precisely the capacity needed for reconstruction. The Reformation could land because the domain being disrupted (religious authority) and the resource used for rebuilding (secular reason) were different things. Reason provided a vantage point outside the crisis. This time, what is being surpassed is the human capacity for independent rational judgment itself. The judgment required to design institutions, evaluate proposals, and negotiate compromises is exactly what AI is surpassing. One might say: then use AI to assist in the rebuilding. But this exposes the core of the predicament. Once AI&#8217;s judgment comprehensively surpasses that of humans, so&#8209;called human oversight becomes a clerk signing off on documents he cannot read, a rubber stamp with no real power of veto. In form you are overseeing. In substance you have no ability to evaluate whether the plan it hands you truly serves your interests. You cannot judge the output of something whose judgment you have already conceded is superior to yours. Reconstruction requires a vantage point independent of AI, and that vantage point is precisely what AI has eliminated.</p>
+        </div>
+      </div>
+
+      <p>If this strategic structure is to reach a steady state, only two outcomes are possible. The first is sustained instability, a condition of chaos without equilibrium. The second is centralized control, where the most powerful constraining force suppresses all complexity, restoring predictability by eliminating degrees of freedom. In other words, dictatorship (<a href="#ref-hobbes-1651">Hobbes 1651</a>).</p>
+    </section>
+
+    <section class="sec" id="conclusion">
+      <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Conclusion</h2></div>
+
+      <p>Dario Amodei, in <em>Machines of Loving Grace</em> (<a href="#ref-amodei-2024">Amodei 2024</a>), paints an inspiring vision: cancer cured, disease eradicated, wealth inequality reduced. These goals are unobjectionable, and the paths he proposes are reasonable within the current framework. But every one of his proposals depends on a set of preconditions. Democratic deliberation depends on voters being able to evaluate AI behavior. Scientific verification depends on human verifiers retaining the credibility to assess results. Benefit distribution depends on property rights and market systems continuing to function. What this paper has argued is precisely that these preconditions are being eroded. When the foundation is unstable, no amount of architectural elegance in the superstructure will help.</p>
+
+      <p>Current governance frameworks, the EU AI Act (<a href="#ref-eu-ai-act-2024">EU AI Act 2024</a>), the NIST Framework (<a href="#ref-nist-2023">National Institute of Standards and Technology 2023</a>), and regulatory schemes across nations, face the same problem. They respond to genuine concerns and propose serious institutions, but the operating logic of these frameworks as a whole presupposes a world of finite actors. The question is whether the ground beneath them can still bear weight.</p>
+
+      <blockquote class="pull">What we may need is something human civilization has never before constructed: a non&#8209;dictatorial institutional framework that does not presuppose all agents to be bounded in capability.</blockquote>
+
+      <p>We do not know whether this is possible. But recognizing the level at which this problem operates is worth more than investing further effort within existing frameworks.</p>
+    </section>
+
+    <section class="sec refs" id="references">
+      <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">References</h2></div>
+      <ol>
+        <li id="ref-acemoglu-robinson-2006">Acemoglu, D. and J. A. Robinson (2006). <em>Economic Origins of Dictatorship and Democracy</em>. Cambridge University Press.</li>
+        <li id="ref-amodei-2024">Amodei, D. (2024). <em>Machines of Loving Grace: How AI Could Transform the World for the Better</em>. <a href="https://darioamodei.com/machines-of-loving-grace">darioamodei.com/machines-of-loving-grace</a>.</li>
+        <li id="ref-anderson-2006">Anderson, E. (2006). &#8220;The Epistemology of Democracy&#8221;. In: <em>Episteme</em> 3.1&#8211;2, pp. 8&#8211;22.</li>
+        <li id="ref-aquinas-1265">Aquinas, T. (1265&#8211;1274). <em>Summa Theologiae</em>.</li>
+        <li id="ref-aristotle-350bce">Aristotle (c. 350 BCE). <em>Politics</em>.</li>
+        <li id="ref-bostrom-2014">Bostrom, N. (2014). <em>Superintelligence: Paths, Dangers, Strategies</em>. Oxford University Press.</li>
+        <li id="ref-buckmaster-alpoge-2026">Buckmaster, T. and L. Alp&ouml;ge (2026). &#8220;Finite Time Blowup with Smooth Forcing Term for the Incompressible Porous Medium, Boussinesq, and Incompressible Euler Equations&#8221;.</li>
+        <li id="ref-cao-2026">Cao, W. (2026). &#8220;Position: Generative Models Erode Human Temporal Learning Through Market Selection&#8221;. In: <em>Proceedings of the 43rd International Conference on Machine Learning (ICML)</em>.</li>
+        <li id="ref-estlund-1997">Estlund, D. (1997). &#8220;Beyond Fairness and Deliberation: The Epistemic Dimension of Democratic Authority&#8221;. In: <em>Deliberative Democracy: Essays on Reason and Politics</em>. MIT Press.</li>
+        <li id="ref-eu-ai-act-2024">EU AI Act (2024). <em>Official Journal of the European Union</em>.</li>
+        <li id="ref-harrison-2007">Harrison, P. (2007). <em>The Fall of Man and the Foundations of Science</em>. Cambridge University Press.</li>
+        <li id="ref-hayek-1945">Hayek, F. A. (1945). &#8220;The Use of Knowledge in Society&#8221;. In: <em>American Economic Review</em> 35.4, pp. 519&#8211;530.</li>
+        <li id="ref-hendrycks-2023">Hendrycks, D., M. Mazeika, and T. Woodside (2023). <em>An Overview of Catastrophic AI Risks</em>. Tech. rep. Center for AI Safety.</li>
+        <li id="ref-hobbes-1651">Hobbes, T. (1651). <em>Leviathan</em>.</li>
+        <li id="ref-kant-1785">Kant, I. (1785). <em>Grundlegung zur Metaphysik der Sitten</em>.</li>
+        <li id="ref-kuhn-1962">Kuhn, T. S. (1962). <em>The Structure of Scientific Revolutions</em>. University of Chicago Press.</li>
+        <li id="ref-lakatos-1978">Lakatos, I. (1978). <em>The Methodology of Scientific Research Programmes</em>. Cambridge University Press.</li>
+        <li id="ref-landemore-2013">Landemore, H. (2013). <em>Democratic Reason: Politics, Collective Intelligence, and the Rule of the Many</em>. Princeton University Press.</li>
+        <li id="ref-madison-1788">Madison, J. (1788). &#8220;Federalist No. 51&#8221;. In: <em>The Federalist Papers</em>.</li>
+        <li id="ref-marx-1867">Marx, K. (1867). <em>Das Kapital</em>. Vol. 1.</li>
+        <li id="ref-menger-1871">Menger, C. (1871). <em>Grunds&auml;tze der Volkswirtschaftslehre</em>.</li>
+        <li id="ref-mill-1859">Mill, J. S. (1859). <em>On Liberty</em>.</li>
+        <li id="ref-montesquieu-1748">Montesquieu (1748). <em>De l&#8217;esprit des lois</em>.</li>
+        <li id="ref-nist-2023">National Institute of Standards and Technology (2023). <em>AI Risk Management Framework (AI RMF 1.0)</em>. Tech. rep.</li>
+        <li id="ref-niebuhr-1944">Niebuhr, R. (1944). <em>The Children of Light and the Children of Darkness</em>. Charles Scribner&#8217;s Sons.</li>
+        <li id="ref-openai-2026">OpenAI (2026). <em>Finite Time Blowup for Navier&#8211;Stokes</em>. Tech. rep.</li>
+        <li id="ref-pettegree-2015">Pettegree, A. (2015). <em>Brand Luther: 1517, Printing, and the Making of the Reformation</em>. Penguin.</li>
+        <li id="ref-plato-375bce">Plato (c. 375 BCE). <em>Republic</em>.</li>
+        <li id="ref-popper-1934">Popper, K. (1934). <em>Logik der Forschung</em>.</li>
+        <li id="ref-popper-1945">Popper, K. (1945). <em>The Open Society and Its Enemies</em>. Routledge.</li>
+        <li id="ref-russell-2019">Russell, S. (2019). <em>Human Compatible: Artificial Intelligence and the Problem of Control</em>. Viking.</li>
+        <li id="ref-strauss-1953">Strauss, L. (1953). <em>Natural Right and History</em>. University of Chicago Press.</li>
+        <li id="ref-tolkien-1954">Tolkien, J. R. R. (1954&#8211;1955). <em>The Lord of the Rings</em>. Allen &amp; Unwin.</li>
+        <li id="ref-weber-1922">Weber, M. (1922). <em>Wirtschaft und Gesellschaft</em>.</li>
+        <li id="ref-yudkowsky-soares-2025">Yudkowsky, E. and N. Soares (2025). <em>If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All</em>. Little, Brown and Company.</li>
+      </ol>
+
+      <div class="cite-box" id="cite">
+        <div class="cite-header">
+          <p>Cite this paper</p>
+          <button class="copy-btn" id="copy-bibtex-btn" type="button" onclick="copyBibtex()">Copy BibTeX</button>
+        </div>
+        <pre id="bibtex-text">@misc{cao2026orderoffinitebeings,
+  author = {Cao, Wenjun},
+  title  = {The Order of Finite Beings: AI and the Foundations of Human Civilization},
+  year   = {2026},
+  month  = {September},
+  doi    = {10.5281/zenodo.22841441},
+  url    = {https://doi.org/10.5281/zenodo.22841441},
+  note   = {Preprint}
+}</pre>
+        <p class="apa">Cao, W. (2026, September 17). <em>The Order of Finite Beings: AI and the Foundations of Human Civilization</em> (Version v1) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.22841441</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="top"><a href="#main">&uarr; Back to top</a></div>
+    <p>Wenjun Cao &middot; <a href="mailto:wenjun.cao.research@gmail.com">wenjun.cao.research@gmail.com</a> &middot; <a href="paper.pdf">PDF</a></p>
+  </footer>
+
+</div>
+<script>
+  function copyBibtex(){
+    var text = document.getElementById('bibtex-text').innerText;
+    var btn = document.getElementById('copy-bibtex-btn');
+    var reset = function(label, delay){
+      setTimeout(function(){ btn.textContent = 'Copy BibTeX'; }, delay);
+      btn.textContent = label;
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        reset('Copied', 1500);
+      }).catch(function(){
+        reset('Copy failed', 1500);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        reset('Copied', 1500);
+      } catch (e){
+        reset('Copy failed', 1500);
+      }
+      document.body.removeChild(ta);
+    }
+  }
+</script>
+</body>
+</html>
